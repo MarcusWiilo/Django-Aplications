@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
@@ -26,7 +25,6 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = (
@@ -36,8 +34,21 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # libs
+    'fixmydjango',
+    'taggit',
+    # apps
     'pro_final.proedu',
     'pro_final.courses',
+    'pro_final.accounts',
+    'pro_final.forum',
+)
+
+
+from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS as TCP
+
+TEMPLATE_CONTEXT_PROCESSORS = TCP + (
+    'django.core.context_processors.request',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -49,6 +60,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
+
 
 ROOT_URLCONF = 'pro_final.urls'
 
@@ -70,7 +82,7 @@ DATABASES = {
 
 LANGUAGE_CODE = 'pt-br'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Recife'
 
 USE_I18N = True
 
@@ -88,13 +100,19 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'pro_final', 'media')
 MEDIA_URL = '/media/'
 
 # E-mails
-# EMAIL_BACKEND = 'django.proedu.mail.backends.smtp.EmailBackend'
-EMAIL_BACKEND = 'django.proedu.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 DEFAULT_FROM_EMAIL = 'Nome <email@gmail.com>'
-EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'email@gmail.com'
-EMAIL_HOST_PASSWORD = 'senha'
-EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_HOST_USER = 'email@gmail.com'
+# EMAIL_HOST_PASSWORD = 'senha'
+# EMAIL_PORT = 587
 
 CONTACT_EMAIL = 'contato@proeducacional.com.br'
+
+# Auth
+LOGIN_URL = 'accounts:login'
+LOGIN_REDIRECT_URL = 'proedu:home'
+LOGOUT_URL = 'accounts:logout'
+AUTH_USER_MODEL = 'accounts.User'
+
