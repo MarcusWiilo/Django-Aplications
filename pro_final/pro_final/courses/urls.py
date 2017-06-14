@@ -1,4 +1,6 @@
 from django.conf.urls import patterns, include, url
+from .views import AuthorCreate, AuthorUpdate, AuthorDelete
+
 
 urlpatterns = patterns('pro_final.courses.views',
 	url(r'^$', 'index', name='index'),
@@ -11,4 +13,8 @@ urlpatterns = patterns('pro_final.courses.views',
 	url(r'^(?P<slug>[\w_-]+)/aulas/$', 'lessons', name='lessons'),
     url(r'^(?P<slug>[\w_-]+)/aulas/(?P<pk>\d+)/$', 'lesson', name='lesson'),
     url(r'^(?P<slug>[\w_-]+)/materiais/(?P<pk>\d+)/$', 'material', name='material'),
+    url(r'author/add/$', AuthorCreate.as_view(), name='author_add'),
+    url(r'author/(?P<pk>[0-9]+)/%', AuthorUpdate.as_view(), name='author_update'),
+    url(r'author/(?P<pk>[0-9]+)/delete/%', AuthorDelete.as_view(), name='author_delete')
+
 )

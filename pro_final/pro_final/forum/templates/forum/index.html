@@ -36,7 +36,7 @@
                 <li class="pure-menu-heading">Tags</li>
                 <li>
                     {% for tag in tags %}
-                    <a href="#" class="tags">
+                    <a href="{% url 'forum:index_tagged' tag.slug %}" class="tags">
                         <i class="fa fa-tag"></i>
                         {{ tag }}
                     </a>
@@ -49,7 +49,7 @@
         <div class="inner">
             {% for thread in object_list %}
             <div class="well">
-                <h3><a href="" title="">{{ thread.title }}</a></h3>
+                <h3><a href="{{ thread.get_absolute_url }}" title="">{{ thread.title }}</a></h3>
                 <h5>
                     Criado por {{ thread.author }} | {{ thread.answers }} resposta{{ thread.answers|pluralize }} | {{ thread.views }} Visualizaç{{ thread.views|pluralize:"ão,ões" }} 
                 </h5>
@@ -57,9 +57,9 @@
                     <i class="fa fa-tags"></i>
                     Tags: 
                     {% for tag in thread.tags.all %}
-                    <a href="" title="">{{ tag }}</a>{% if not forloop.last %},{% endif %}
+                    <a href="{% url 'forum:index_tagged' tag.slug %}" title="">{{ tag }}</a>{% if not forloop.last %},{% endif %}
                     {% endfor %}
-                    <a class="fright" href="" title="">Atualizado a {{ thread.modified|timesince }} atrás</a>
+                    <a class="fright" href="{{ thread.get_absolute_url }}" title="">Atualizado a {{ thread.modified|timesince }} atrás</a>
                 </p>
             </div>
             {% endfor %}

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Contato | {{ block.super }}
+{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+    <h1 style="text-align: center;">Cadastrar Conteudos</h1>
+</div>
+
+            <div class="form-group">
+              <label for="id_name" class="col-md-3 control-label">Nome do Curso</label>
+              <div class="col-md-9">
+                <input type="text" class="form-control" id="id_name" placeholder="Nome do Curso" />
+              </div>
+            </div>
+<br />
+<form action="envia_foto.php" method="phost">
+<input type="file" name="Arquivo" id="Arquivo"><br>
+<input type="submit" value="Enviar">
+<input type="reset" value="Apagar">
+        <label for="id_name" class="col-md-3 control-label"><a>Baixar o Modelo do Plano de Ensino</a></label>
+</form>
+
+<p style="text-align: center;"><a href="{% url 'accounts:dashboard' %}" class="btn btn-primary">Finalizar Curso</a></p>
+
+
+{% endblock %}

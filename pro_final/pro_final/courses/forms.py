@@ -1,9 +1,7 @@
 from django import forms
 from django.core.mail import send_mail
 from django.conf import settings
-
 from pro_final.proedu.mail import send_mail_template
-
 from .models import Comment
 
 

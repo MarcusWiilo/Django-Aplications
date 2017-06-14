@@ -4,6 +4,15 @@ from django.utils import timezone
 
 from pro_final.proedu.mail import send_mail_template
 
+from django.core.urlresolvers import reverse
+from django.db import models
+
+class Author(models.Model):
+	name = models.CharField(max_length=200)
+
+	def get_absolute_url(self):
+		return reverse('author-detail', kwargs={'pk': self.pk})
+
 class CourseManager(models.Manager):
 	"""
 		Class para adicionar um select customizado do BD
@@ -47,7 +56,7 @@ class Course(models.Model):
 
 	class Meta:
 		verbose_name = 'Curso'
-		verbose_name_plural = 'Cursos'
+		verbose_name_plural = 'Criar Cursos'
 		ordering = ['name']
 
 class Lesson(models.Model):
@@ -73,7 +82,7 @@ class Lesson(models.Model):
 
     class Meta:
         verbose_name = 'Aula'
-        verbose_name_plural = 'Aulas'
+        verbose_name_plural = 'Lista de Temas de Curso Para Aprovar'
         ordering = ['number']
 
 class Material(models.Model):
@@ -92,7 +101,9 @@ class Material(models.Model):
 
 	class Meta:
 		verbose_name = 'Matérial'
-		verbose_name_plural = 'Materiais'
+		verbose_name_plural = 'Lista de Conteudo Para Aprovar'
+
+
 
 class Enrollment(models.Model):
 
@@ -125,7 +136,7 @@ class Enrollment(models.Model):
 
 	class Meta:
 		verbose_name = 'Inscrição'
-		verbose_name_plural = 'Inscrições'
+		verbose_name_plural = 'Lista de Plano de Ensino Para Aprovar'
 		unique_together = (('user', 'course'),)
 
 class Announcement(models.Model):
@@ -160,7 +171,7 @@ class Comment(models.Model):
 
 	class Meta:
 		verbose_name = 'Comentário'
-		verbose_name_plural = 'Comentários'
+		verbose_name_plural = 'Lista de Cursos Para Aprovar'
 		ordering = ['created_at']
 
 def post_save_announcement(instance, created, **kwargs):

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Contato | {{ block.super }}
+{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+    <h1 style="text-align: center;">Cadastrar Plano de Ensino</h1>
+</div>
+
+<br />
+
+<form action="envia_foto.php" method="phost">
+<p>Enviar Plano de Ensino Preenchido</p>
+<input type="file" name="Arquivo" id="Arquivo"><br>
+<input type="submit" value="Enviar">
+<input type="reset" value="Apagar">
+        <label for="id_name" class="col-md-3 control-label"><a>Baixar o Modelo do Plano de Ensino</a></label>
+</form>
+
+<p style="text-align: center;"><a href="{% url 'proedu:contact3' %}" class="btn btn-primary">Enviar</a></p>
+
+
+{% endblock %}

@@ -22,7 +22,7 @@ from .forms import ReplyForm
 
 class ForumView(ListView):
 
-    paginate_by = 2
+    paginate_by = 5
     template_name = 'forum/index.html'
 
     def get_queryset(self):

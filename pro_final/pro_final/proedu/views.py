@@ -6,3 +6,9 @@ def home(request):
 	
 def contact(request):
 	return render(request, 'contact.html')
+
+def contact2(request):
+	return render(request, 'contact2.html')
+
+def contact3(request):
+	return render(request, 'contact3.html')

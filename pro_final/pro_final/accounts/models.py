@@ -11,7 +11,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 
 	username = models.CharField('Nome do Usuário', max_length=30, unique=True,
 		validators=[validators.RegexValidator(re.compile('^[\w.@+-]+$'),
-			'O nome de usuário só pode conter lestras, digitos ou os seguintes caracteres: @/./+/-/_', 'invalid')]
+			'O nome de usuário só pode conter letras, digitos ou os seguintes caracteres: @/./+/-/_', 'invalid')]
 	)
 	email = models.EmailField('E-mail', unique=True)
 	name = models.CharField('Nome', max_length=100, blank=True)

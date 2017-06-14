@@ -7,5 +7,5 @@ urlpatterns = patterns('pro_final.forum.views',
         name='reply_correct'),
     url(r'^respostas/(?P<pk>\d+)/incorreta/$', 'reply_incorrect', 
         name='reply_incorrect'),
-    url(r'^(?P<slug>[\w_-]+)/$', 'thread', name='thread'),
+    url(r'^slug/(?P<slug>[\w_-]+)/$', 'thread', name='thread'),
 )

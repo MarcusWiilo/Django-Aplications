@@ -2,12 +2,12 @@
 
 {% block content %}
 <div class="jumbotron page-header">
-  <h1>Pro Educacional</h1>
+  <h1 style="text-align: center;">Pro Educacional</h1>
 {% if user.is_authenticated %}
 <p>Bem Vindo a plataforma do professor Pro Educacional. Agora que você já foi aprovado em nosso processo seletivo você pode iniciar o processo de criar seu curso.</p>
-<p><a class="btn btn-primary">Criar Curso</a></p>
+<p style="text-align: center;"><a href="{% url 'proedu:contact' %}" class="btn btn-primary">Criar Curso</a></p>
 {% else %}
-<p>Educação em finanças e negócios</p>
-<p><a class="btn btn-primary">Cadastrar</a></p>
+<p style="text-align: center;">Educação em finanças e negócios</p>
+<p style="text-align: center;"><a class="btn btn-primary">Entrar</a></p>
 {% endif %}
 {% endblock %}

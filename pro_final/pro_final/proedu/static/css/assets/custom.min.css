@@ -20,7 +20,7 @@ body>.navbar-transparent .navbar-nav>
 
 .table-of-contents{margin-top:1em}
 
-.page-header h1{font-size:4em;text-align:center;}
+.page-header h1{font-size:4em;text-align:center}
 
 .bs-docs-section{margin-top:6em}
 
@@ -64,6 +64,24 @@ footer p{clear:left;margin-bottom:0}
 
 .section-preview{padding:4em 0 4em}
 
-.section-preview .preview{margin-bottom:4em;background-color:#eaf1f1}.section-preview .preview .image{position:relative}.section-preview .preview .image:before{box-shadow:inset 0 0 0 1px rgba(0,0,0,.1);position:absolute;top:0;left:0;width:100%;height:100%;content:"";pointer-events:none}.section-preview .preview .options{padding:1em 2em 2em;border:1px solid rgba(0,0,0,.05);border-top:none;text-align:center}.section-preview .preview .options p{margin-bottom:2em}.section-preview .dropdown-menu{text-align:left}.section-preview .lead{margin-bottom:2em}@media (max-width:767px){.section-preview .image img{width:100%}}.sponsor #carbonads{max-width:240px;margin:0 auto}.sponsor .carbon-text{display:block;margin-top:1em;font-size:12px}.sponsor .carbon-poweredby{float:right;margin-top:1em;font-size:10px}@media (max-width:767px){.splash{padding-top:4em}.splash .logo{width:100px}.splash h1{font-size:2em}#banner{margin-bottom:2em;text-align:center}}
+.section-preview .preview{margin-bottom:4em;background-color:#eaf1f1}
 
+.section-preview .preview .image{position:relative}
 
+.section-preview .preview .image:before{box-shadow:inset 0 0 0 1px rgba(0,0,0,.1);position:absolute;top:0;left:0;width:100%;height:100%;content:"";pointer-events:none}
+
+.section-preview .preview .options{padding:1em 2em 2em;border:1px solid rgba(0,0,0,.05);border-top:none;text-align:center}
+
+.section-preview .preview .options p{margin-bottom:2em}
+
+.section-preview .dropdown-menu{text-align:left}
+
+.section-preview .lead{margin-bottom:2em}
+
+@media (max-width:767px){.section-preview .image img{width:100%}}
+
+.sponsor #carbonads{max-width:240px;margin:0 auto}.sponsor .carbon-text{display:block;margin-top:1em;font-size:12px}.sponsor .carbon-poweredby{float:right;margin-top:1em;font-size:10px}@media (max-width:767px){.splash{padding-top:4em}.splash .logo{width:100px}.splash h1{font-size:2em}#banner{margin-bottom:2em;text-align:center}}
+
+.cad_content h1{
+	text-align:center;
+}

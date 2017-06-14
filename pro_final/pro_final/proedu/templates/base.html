@@ -27,10 +27,9 @@
   <div class="navbar-collapse collapse" id="navbar-main">
 	<ul class="nav navbar-nav navbar-right">
 	{% if user.is_authenticated %}
-	<li><a href="#">Criar Curso</a></li>
+	<li><a href="{% url 'proedu:contact' %}">Criar Curso</a></li>
 	<li><a href="{% url 'courses:index' %}">Cursos Pré-Aprovados</a></li>
 	<li><a href="{% url 'forum:index' %}">Forum</a></li>
-	<li><a href="{% url 'courses:index' %}">Meus Cursos</a></li>
 	<li><a href="{% url 'accounts:dashboard' %}">Painel</a></li>
 	<li><a href="{% url 'accounts:logout' %}">Sair</a></li>
 	{% else %}
@@ -41,7 +40,7 @@
   </div>
 </div>
 
-<div class="content">
+<div class="container">
     {% if messages %}
     <div class="pure-g-r content-ribbon">
         <aside class="pure-u-1">
@@ -68,7 +67,7 @@
 	</div>
 </footer>
 
-<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="{% static 'css/assets/bootstrap.min.js' %}"></script>
+
 </body>
 </html>
