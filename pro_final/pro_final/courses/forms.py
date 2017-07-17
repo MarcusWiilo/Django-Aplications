@@ -25,22 +25,6 @@ class ContactCourse(forms.Form):
             subject, template_name, context, [settings.CONTACT_EMAIL]
         )
 
-    # Envio antigo, sem o uso de template
-    # def send_mail(self, course):
-    #     subject = '[%s] Contato' % course
-    #     message = 'Nome: %(name)s;E-mail: %(email)s;%(message)s'
-    #     context = {
-    #         'name': self.cleaned_data['name'],
-    #         'email': self.cleaned_data['email'],
-    #         'message': self.cleaned_data['message'],
-    #     }
-    #     message = message % context
-    #     send_mail(
-    #         subject, message, settings.DEFAULT_FROM_EMAIL,
-    #         [settings.CONTACT_EMAIL]
-    #     )
-
-
 class CommentForm(forms.ModelForm):
 
     class Meta:
